@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:wght@400&display=swap" rel="stylesheet">
-
+    
 
     <!--==============================
 	    All CSS File
@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assets/css/slick.min.css">
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 </head>
 
@@ -738,10 +739,7 @@
                 </div>
              
             </div>
-            <div class="map">
-                <iframe src="https://www.google.com/maps/d/embed?mid=1EX5bsORqF2Ya3FVI005-3t9UgAUt6hs&ehbc=2E312F" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-               
-            </div>
+            <div id="map"></div>
         </div>
     </section>
 
@@ -891,6 +889,32 @@
   src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
   type="module"
 ></script>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // Step 1: Initialize the map
+  var map = L.map('map').setView([32.5, -6.5], 7); // Centered in Morocco
+
+  // Step 2: Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Step 3: Add markers for each Unimagri location
+  var locations = [
+    { name: "Casablanca", coords: [33.5333, -7.5833] },
+    { name: "Aït Melloul", coords: [30.3342, -9.4972] },
+    { name: "Meknès", coords: [33.8597, -5.5301] },
+    { name: "Errachidia", coords: [31.9319, -4.4244] }
+  ];
+
+  locations.forEach(function(loc) {
+    L.marker(loc.coords).addTo(map).bindPopup(loc.name);
+  });
+</script>
 
 
 
