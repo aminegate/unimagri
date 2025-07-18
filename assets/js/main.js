@@ -231,7 +231,7 @@
 
         // Function For Custom Arrow Btn
         $("[data-slick-next]").each(function () {
-            $(this).on("click", function (e) {é
+            $(this).on("click", function (e) {
                 e.preventDefault();
                 $($(this).data("slick-next")).slick("slickNext");
             });
@@ -263,7 +263,7 @@
             slidesToShow: d("slide-show") ? d("slide-show") : 1,
             adaptiveHeight: d("adaptive-height") ? true : false,
             centerMode: d("center-mode") ? true : false,
-            autoplaySpeed: d("autoplay-speed") ? d("autoplay-speed") : 10,
+            autoplaySpeed: d("autoplay-speed") ? d("autoplay-speed") : 100,
             cssEase: 'linear',
             centerPadding: d("center-padding") ? d("center-padding") : "0",
             focusOnSelect: d("focuson-select") == false ? false : true,
@@ -350,7 +350,7 @@
       ],
         });
     });
-
+   
     /*----------- 09. Ajax Contact Form ----------*/
     var form = ".ajax-contact";
     var invalidCls = "is-invalid";
