@@ -12,8 +12,8 @@
 
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" target="_blank" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" target="_blank" href="assets/img/favicon.ico" type="image/x-icon">
 
     <!--==============================
 	  Google Fonts
@@ -27,15 +27,15 @@
 	    All CSS File
 	============================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" target="_blank" href="assets/css/bootstrap.min.css">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" target="_blank" href="assets/css/all.min.css">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" target="_blank" href="assets/css/magnific-popup.min.css">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <link rel="stylesheet" target="_blank" href="assets/css/slick.min.css">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" target="_blank" href="assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 </head>
@@ -60,7 +60,7 @@
         <!--==============================
     Mobile Menu
     ============================== -->
-       <div class="vs-menu-wrapper">
+        <div class="vs-menu-wrapper">
             <div class="vs-menu-area text-center">
                 <button class="vs-menu-toggle"><i class="fa-solid fa-times"></i></button>
                 <div class="mobile-logo">
@@ -74,8 +74,13 @@
                         <li>
                             <a href="a-propos.html">À propos</a>
                         </li>
-                        <li class="">
-                            <a href="nos-solutions.html">Nos solutions</a>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)">Nos solutions</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="nos-solutions.html">Pompage</a></li>
+                                <li><a href="solution2.html">Irrigation</a></li>
+                                <li><a href="solution3.html">Énergie</a></li>
+                            </ul>
                         </li>
                         <li class="">
                             <a href="nos-agences.html">Nos agences</a>
@@ -141,8 +146,14 @@
                                             <li>
                                                 <a href="a-propos.html">À propos</a>
                                             </li>
-                                            <li class="">
-                                                <a href="nos-solutions.html">Nos solutions</a>
+                                            <li class="dropdown">
+                                                <a href="javascript:void(0)" class="dropdown-toggle">Nos solutions</a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="nos-solutions-pompage.html">Pompage</a></li>
+                                                    <li><a href="nos-solutions-irrigation.html">Irrigation</a></li>
+                                                    <li><a href="nos-solutions-energie.html">Énergie</a></li>
+                                                    <li><a href="nos-solutions-installation.html">Études & Installation</a></li>
+                                                </ul>
                                             </li>
                                             <li class="">
                                                 <a href="nos-agences.html">Nos agences</a>
@@ -246,95 +257,260 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-8">
-                        <div class="col-lg-6">
-                            <div class="solution-section-left-2">
-                                <img src="assets/img/nos-solutions/2.jpg" alt="">
-                            </div>
+                    <div class="tabs" role="tablist" aria-label="Demo tabs">
 
+                        <!-- radios -->
+                        <input id="tab1" type="radio" name="tabs" checked>
+                        <input id="tab2" type="radio" name="tabs">
+                        <input id="tab3" type="radio" name="tabs">
+                        <input id="tab4" type="radio" name="tabs">
+                        <input id="tab5" type="radio" name="tabs">
+                        <input id="tab6" type="radio" name="tabs">
+                        <input id="tab7" type="radio" name="tabs">
+                        <input id="tab8" type="radio" name="tabs">
+
+                        <!-- tab headers -->
+                        <div class="tab-list" aria-hidden="false">
+                            <label for="tab1" role="tab" aria-controls="panel1">Électropompes Immergées</label>
+                            <label for="tab2" role="tab" aria-controls="panel2">Électropompes de Surface</label>
+                            <label for="tab3" role="tab" aria-controls="panel3">Électropompes Submersibles</label>
+                            <label for="tab4" role="tab" aria-controls="panel4">Électropompes de Piscine</label>
+                            <label for="tab5" role="tab" aria-controls="panel5">Groupes de Suppression</label>
+                            <label for="tab6" role="tab" aria-controls="panel6">Réservoirs</label>
+                            <label for="tab7" role="tab" aria-controls="panel7">Tubes</label>
+                            <label for="tab8" role="tab" aria-controls="panel8">Éléments Galvanisés</label>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="solution-section-right-2">
-                                <div class="solution-title">
-                                    <icon></icon>
-                                    <h1>Irrigation</h1>
+
+                        <!-- panels -->
+                        <div class="panels">
+                            <!-- panel 1 -->
+                            <div id="panel1" class="panel panel1" role="tabpanel" aria-labelledby="tab1">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/aqua.jpg" alt="">
+                                    </div>
+                                    <p class="mb-2"><span style="font-weight: 600; color: #0d5295">Aqua Deep</span> propose une large gamme de pompes et de moteurs pour les solutions liées à l’eau. Elle fabrique des pompes et moteurs submersibles de 4", 6", 7", 8" et 10". Forte de plus de 59 ans d’expérience, Aqua Deep ouvre la voie grâce à de nombreuses premières dans le secteur, portées par son engagement envers des activités d’ingénierie et de R&D de haut niveau.</p>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #0d5295">Aqua Deep</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/aqua-deep-IMMERGEES.pdf" download="aqua-deep-IMMERGEES.pdf">
+                                            <i class="fa-solid fa-download"></i> Aqua Deep
+                                        </a> </p>
+                                    <hr>
                                 </div>
-                                <span>Réinventez l'agriculture avec une irrigation efficace</span>
-                                <p>L’irrigation est un pilier essentiel pour le développement
-                                    agricole, en particulier dans un pays comme le Maroc où les
-                                    ressources en eau sont précieuses et les conditions
-                                    climatiques souvent arides. Elle permet d’optimiser la
-                                    production agricole, de garantir la sécurité
-                                    alimentaire et de soutenir l'économie rurale en assurant un
-                                    apport en eau régulier et maîtrisé aux cultures. Chez
-                                    Unimagri, nous offrons des solutions complètes et
-                                    innovantes d’irrigation, adaptées aux besoins des
-                                    agriculteurs marocains. Notre expertise couvre tous les
-                                    types de systèmes d’irrigation : l’aspersion et l’irrigation
-                                    localisée, en mettant l’accent sur l’efficacité hydrique et la
-                                    rentabilité. Grâce à des
-                                    équipements de haute qualité et un accompagnement
-                                    technique
-                                    personnalisé, nous aidons nos clients à maximiser leurs
-                                    rendements tout en contribuant à une gestion durable des
-                                    ressources en eau.</p>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/atx.jpg" alt="">
+                                    </div>
+                                    <p class="mb-2"><span style="font-weight: 600; color: #c01f25">ATX</span> Propose une gamme complète de produits, avec une expérience de plus de 50 ans dans l'industrie des pompes. Le group dispose de six divisions équipées d'installation de fabrication répondant aux normes internationales, avec une équipe de personnel qualifiée. Avec leur département R&D avancé, ATX investit dans la conception de nouvelles pompes et à l'amèlioration de la performance des produits existants.</p>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #c01f25">ATX</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/ATX-IMMERGGE.pdf">
+                                            <i class="fa-solid fa-download"></i> Atx
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/calpeda.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #015764">Calpeda</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/CALPEDA-IMMERGEES.pdf">
+                                            <i class="fa-solid fa-download"></i> Calpeda
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/genova.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #02923f">Genova</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/genova-electropompes-immergees-inox.pdf">
+                                            <i class="fa-solid fa-download"></i> Genova
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/leo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #4a4f55">Leo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/LEO-ELECTRO-POMPES-IMMERGEES.pdf">
+                                            <i class="fa-solid fa-download"></i> Leo
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/mastra.jpg" alt="">
+                                    </div>
+                                    <p class="mb-2"><span style="font-weight: 600; color: #304b9c">Mastra</span> est un nom de confiance dans l'industrie des pompes. la société utilise une tehcnologie de production de points pour fabriquer des moteurs submersibles et des pompes de haute qualité pour les puits. Ses produits sont vendus dans plus de 80 pays, répondant aux normes nationales et internationales. Mastra a développé une solide capacité de recherche et d'innovation indépendante à travers leurs centres nationaux.</p>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #304b9c">Mastra</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/MASTRA-IMMERGEES.pdf">
+                                            <i class="fa-solid fa-download"></i> Mastra
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/pluvio.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #28235d">Pluvio</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/immerge/PLUVIO-ELECTROPOMPES-IMMERGEES.pdf">
+                                            <i class="fa-solid fa-download"></i> Pluvio
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 2 -->
+                            <div id="panel2" class="panel panel2" role="tabpanel" aria-labelledby="tab2">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/calpeda.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #015764">Calpeda</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/surface/CALPEDA-SURFACE.pdf">
+                                            <i class="fa-solid fa-download"></i> Calpeda
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/leo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #4a4f55">Leo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/surface/LEO-ELECTRO-POMPES-DE-SURFACE.pdf">
+                                            <i class="fa-solid fa-download"></i> Leo
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 3 -->
+                            <div id="panel3" class="panel panel3" role="tabpanel" aria-labelledby="tab3">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/calpeda.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #015764">Calpeda</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/sb/calpeda-sb.pdf">
+                                            <i class="fa-solid fa-download"></i> Calpeda
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/genova.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #02923f">Genova</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/sb/genova-sb.pdf">
+                                            <i class="fa-solid fa-download"></i> Genova
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/leo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #4a4f55">Leo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/sb/LEO-SB.pdf">
+                                            <i class="fa-solid fa-download"></i> Leo
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/mastra.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #304b9c">Mastra</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/sb/MASTRA-sb.pdf">
+                                            <i class="fa-solid fa-download"></i> Mastra
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/pluvio.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #28235d">Pluvio</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/sb/pluvio-sb.pdf">
+                                            <i class="fa-solid fa-download"></i> Pluvio
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 4 -->
+                            <div id="panel4" class="panel panel4" role="tabpanel" aria-labelledby="tab4">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/calpeda.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #015764">Calpeda</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/piscine/CALPEDA-PISCINE.pdf">
+                                            <i class="fa-solid fa-download"></i> Calpeda
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/leo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #4a4f55">Leo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/piscine/LEO-ELECTROPOMPE-DE-PISCINE.pdf">
+                                            <i class="fa-solid fa-download"></i> Leo
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 5 -->
+                            <div id="panel5" class="panel panel5" role="tabpanel" aria-labelledby="tab5">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/calpeda.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #015764">Calpeda</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/supprission/CALPEDA-GROUPE-DE-SURPPRISS.pdf">
+                                            <i class="fa-solid fa-download"></i> Calpeda
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/leo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #4a4f55">Leo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/supprission/LEO-GROUPE-DE-SURPPRISS.pdf">
+                                            <i class="fa-solid fa-download"></i> Leo
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 6 -->
+                            <div id="panel6" class="panel panel6" role="tabpanel" aria-labelledby="tab6">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/ibaiondo.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #1d1d1b">Ibaiondo</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/reservoire/IBAIONDO-RESERVOIRS-A-VESSIE-ET-GALVANISES.pdf">
+                                            <i class="fa-solid fa-download"></i> Ibaiondo
+                                        </a> </p>
+                                    <hr>
+                                </div>
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/liston.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #a03346">Liston</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/reservoire/LITSON-RESERVOIRS-A-VESSIE.pdf">
+                                            <i class="fa-solid fa-download"></i> Liston
+                                        </a> </p>
+                                    <hr style="background: transparent">
+                                </div>
+                            </div>
+                            <!-- panel 7 -->
+                            <div id="panel7" class="panel panel7" role="tabpanel" aria-labelledby="tab7">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/upvc.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #1d1d1b">Tubes</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/tube/UPVC-TUBES-&-TUYAUX.pdf">
+                                            <i class="fa-solid fa-download"></i> Tubes
+                                        </a> </p>
+                                    <hr style="background: transparent;">
+                                </div>
+                            </div>
+                            <!-- panel 7 -->
+                            <div id="panel8" class="panel panel8" role="tabpanel" aria-labelledby="tab8">
+                                <div class="pompeCartWrapper">
+                                    <div class="pompeImgWrapper">
+                                        <img src="assets/img/nos-solutions/galvanise.jpg" alt="">
+                                    </div>
+                                    <p>Pour plus d’informations sur <span style="font-weight: 600; color: #1d1d1b">Éléments Galvanisés</span>, consultez cette brochure&nbsp;<a target="_blank" href="assets/brochure/galvanise/UPVC-ELEMENTS-GALVANISEE-&-ACCESSOIRES.pdf">
+                                            <i class="fa-solid fa-download"></i> Éléments Galvanisés
+                                        </a> </p>
+                                    <hr style="background: transparent;">
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mb-7">
-                        <div class="col-lg-6">
-                            <div class="solution-section-left">
-                                <div class="solution-title">
-                                    <icon></icon>
-                                    <h1>Énergie</h1>
-                                </div>
-                                <span>Votre clé pour un avenir durable</span>
-                                <p>réponse efficace et durable aux besoins en énergie,
-                                    particulièrement dans un pays comme le Maroc, riche en
-                                    ensoleillement. Exploiter cette ressource naturelle permet de
-                                    réduire les coûts énergétiques tout en préservant l’environnement,
-                                    ce qui en fait un levier majeur pour le développement économique
-                                    et écologique. Chez Unimagri, nous proposons des solutions
-                                    solaires adaptées aux besoins de nos clients : pompage solaire
-                                    pour l’agriculture, systèmes photovoltaïques pour
-                                    l’autoconsommation, électrification des zones isolées, ainsi que
-                                    des solutions dédiées à l’industrie et à la construction. Chaque
-                                    projet est soigneusement conçu pour maximiser l'efficacité
-                                    énergétique tout en s'intégrant aux exigences locales et aux
-                                    spécificités de chaque secteur. Avec notre expertise et nos produits
-                                    de qualité, nous
-                                    Contribuons à bâtir un avenir énergétique plus propre, plus
-                                    accessible et durable pour tous.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="solution-section-right">
-                                <img src="assets/img/nos-solutions/3.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-8">
-                        <div class="col-lg-6">
-                            <div class="solution-section-left-2">
-                                <img src="assets/img/nos-solutions/4.jpg" alt="">
-                            </div>
-
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="solution-section-right-2">
-                                <div class="solution-title">
-                                    <icon></icon>
-                                    <h1>Études & Installation</h1>
-                                </div>
-                                <p>Notre département d’études intégré vous accompagne dès les premières étapes de votre projet. Nous réalisons
-                                    des études techniques personnalisées, des analyses de faisabilité et des simulations hydrauliques et
-                                    énergétiques. Grâce à une équipe qualifiée, nous assurons ensuite une installation professionnelle sur site, dans
-                                    le respect des normes de qualité et de sécurité.
-                                    Chaque projet est suivi avec rigueur, jusqu’à sa mise en service complète.</p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>

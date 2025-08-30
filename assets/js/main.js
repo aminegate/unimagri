@@ -25,6 +25,18 @@
     /*
 
     /*---------- 01. On Load Function ----------*/
+    (function ($) {
+        $(".dropdown").hover(
+      function () { // mouse enter
+        $(this).children(".dropdown-menu").stop(true, true).slideDown(300);
+      },
+      function () { // mouse leave
+        $(this).children(".dropdown-menu").stop(true, true).slideUp(300);
+      }
+    );
+    })(jQuery);
+
+    
     $(window).on("load", function () {
         $(".preloader").fadeOut();
     });

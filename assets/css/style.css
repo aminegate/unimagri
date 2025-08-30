@@ -3,6 +3,182 @@
 
 
 
+
+
+
+:root{
+    --bg: #f7f8fb;
+    --card: #ffffff;
+    --accent: #1d71b8; /* purple */
+    --muted: #6b7280;
+    --radius: 12px;
+    --gap: 8px;
+  }
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 0px 0px 5px 5px !important;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background: #f4f4f4;
+}
+
+ul.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-toggle:after {
+
+    margin-left: 0.5em !important;
+    vertical-align: .15em !important;
+}
+
+/**********************************************/
+  .tabs {
+    margin: 50px 0px 100px 0px;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  /* hide native radios */
+  .tabs input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* tab headers */
+  .tab-list {
+    display: flex;
+    gap: var(--gap);
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+  }
+
+  .tab-list label{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+    transition: all 180ms ease;
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  /* active tab style via :checked */
+  #tab1:checked ~ .tab-list label[for="tab1"],
+  #tab2:checked ~ .tab-list label[for="tab2"],
+  #tab3:checked ~ .tab-list label[for="tab3"],
+  #tab4:checked ~ .tab-list label[for="tab4"],
+  #tab5:checked ~ .tab-list label[for="tab5"],
+  #tab6:checked ~ .tab-list label[for="tab6"],
+  #tab7:checked ~ .tab-list label[for="tab7"],
+  #tab8:checked ~ .tab-list label[for="tab8"]{
+    background: linear-gradient(90deg, rgba(79,70,229,0.09), rgba(79,70,229,0.04));
+    color: var(--accent);
+    box-shadow: 0 4px 10px rgba(79,70,229,0.08);
+    transform: translateY(-2px);
+  }
+
+  /* panels container */
+  .panels{
+    padding: 20px;
+    border-top: 1px solid rgba(15,23,42,0.04);
+    min-height: 160px;
+  }
+
+  .panel{
+    display: none;
+    animation: appear 160ms ease;
+  }
+
+  @keyframes appear{
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* show correct panel when its radio checked */
+  #tab1:checked ~ .panels .panel1,
+  #tab2:checked ~ .panels .panel2,
+  #tab3:checked ~ .panels .panel3,
+  #tab4:checked ~ .panels .panel4,
+  #tab5:checked ~ .panels .panel5,
+  #tab6:checked ~ .panels .panel6,
+  #tab7:checked ~ .panels .panel7,
+  #tab8:checked ~ .panels .panel8{
+    display: block;
+  }
+
+  /* small responsive */
+  @media (max-width:600px){
+    .tab-list{
+      gap:6px;
+      padding: 8px;
+    }
+    .tab-list label{ padding: 8px 10px; font-size:13px; }
+    .panels{ padding: 14px; }
+  }
+
+
+.panel h3 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.panel p {
+    text-align: center;
+}
+
+.pompeImgWrapper img {
+    width: 15%;
+    margin: 20px 0px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.pompeImgWrapper  {
+    text-align: center;
+}
+
+.pompeCartWrapper hr {
+    width: 40%;
+    margin: 35px auto 10px auto;
+    background: #0d5295;
+}
+
+.pompageCartesTitle {
+    text-align: center;
+}
+/*****************************************************************/
+
 .nosAgences-paragraph p {
     font-size: 20px;
     line-height: 80px;
@@ -378,7 +554,7 @@
     width: 100%;
 }
 
-.aboutUs-1-left span {
+.aboutUs-1-left > span:first-child {
     display: flex;
     align-items: center;
     color: #1d71b8;
@@ -389,7 +565,7 @@
     padding-left: 13px;
 }
 
-.aboutUs-1-left span i {
+.aboutUs-1-left > span:first-child i {
     color: #95c11f;
     font-size: 15px;
 }
