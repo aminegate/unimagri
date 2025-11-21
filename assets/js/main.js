@@ -1,5 +1,99 @@
 (function ($) {
     ("use strict");
+    
+    
+(function($){
+    $(document).ready(function() {
+
+        // Smooth scroll to any target
+        function smoothScrollTo(target) {
+            var $target = $(target);
+            if ($target.length) {
+                $('html, body').animate({
+                    scrollTop: $target.offset().top
+                }, 800);
+            }
+        }
+
+        // Scroll to section after hero
+        function scrollToNextSection() {
+            var nextSection = $('.hero-layout1').next();
+            if(nextSection.length) {
+                $('html, body').animate({
+                    scrollTop: nextSection.offset().top
+                }, 800);
+            }
+        }
+
+        // Wait until loader disappears
+        function onLoaderFinished(callback) {
+            if ($('.loading-container').length) {
+                var loaderCheck = setInterval(function() {
+                    if (!$('.loading-container').is(':visible')) {
+                        clearInterval(loaderCheck);
+                        callback();
+                    }
+                }, 50);
+            } else {
+                callback();
+            }
+        }
+
+        // Handle menu link clicks
+        $('.main-menu a').on('click', function(e) {
+            var href = $(this).attr('href');
+
+            // If contact link, just scroll to contact
+            if (href === '#contact-target') {
+                e.preventDefault();
+
+                // If on index, scroll after loader
+                onLoaderFinished(function() {
+                    smoothScrollTo('#contact-target');
+                });
+                return;
+            }
+
+            // Skip index.html (normal behavior)
+            if (href === 'index.html') return;
+
+            e.preventDefault();
+
+            var isExternalPage = href.indexOf('.html') > -1 && href !== window.location.pathname.split('/').pop();
+
+            if (isExternalPage) {
+                // Save target in localStorage
+                localStorage.setItem('scrollTarget', href);
+                window.location.href = href;
+            } else {
+                // Same page, scroll after loader
+                onLoaderFinished(function() {
+                    $(window).scrollTop(0);
+                    scrollToNextSection();
+                });
+            }
+        });
+
+        // On page load, check if we need to scroll after coming from another page
+        var storedTarget = localStorage.getItem('scrollTarget');
+        if(storedTarget) {
+            onLoaderFinished(function() {
+                if(storedTarget === 'index.html#contact-target' || storedTarget === '#contact-target') {
+                    smoothScrollTo('#contact-target');
+                } else {
+                    $(window).scrollTop(0);
+                    scrollToNextSection();
+                }
+                localStorage.removeItem('scrollTarget');
+            });
+        }
+
+    });
+})(jQuery);
+
+
+    
+    
     /*=================================
         JS Index Here
     ==================================*/

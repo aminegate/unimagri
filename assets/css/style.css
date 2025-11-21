@@ -1,6 +1,27 @@
 @charset "UTF-8";
 
-.pomp-cartes {
+
+.pompage,
+.irrigation,
+.energie{
+    padding-top: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.irrigation-cart-info-2 {
+    background: #12100b !important;
+}
+
+.energie-cart-info-2 {
+    background: #1d1d1b !important;
+}
+
+.pomp-cartes,
+.irrigation-cartes,
+.energie-cartes{
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -8,7 +29,9 @@
     flex-wrap: wrap;
 }
 
-.pomp-cart-info {
+.pomp-cart-info,
+.irrigation-cart-info,
+.energie-cart-info{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -24,17 +47,19 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-div#target-2 {
-    padding-bottom: 80px;
-}
 
-.pompage-wrapper-1 h3 {
+
+.pompage-wrapper-1 h3,
+.irrigation-wrapper-1 h3,
+.energie-wrapper-1 h3{
     text-align: center;
     margin-bottom: 55px;
     color: #64b745;
 }
 
-.pomp-cart-info a {
+.pomp-cart-info a,
+.irrigation-cart-info a,
+.energie-cart-info a{
     position: relative;
     z-index: 1;
     color: white;
@@ -57,7 +82,9 @@ div#target-2 {
     background: #1d71b8 !important;
 }
 
-.pomp-cart-info a:hover {
+.pomp-cart-info a:hover,
+.irrigation-cart-info a:hover,
+.energie-cart-info a:hover{
     color: white;
 }
 
@@ -66,13 +93,17 @@ div#target-2 {
     transition: all ease 0.3s
 }
 
-.pompage h2 {
+.pompage h2,
+.irrigation h2,
+.energie h2{
     color: #64b745;
     text-align: center;
     margin-bottom: 60px;
 }
 
-.pompage-item {
+.pompage-item,
+.irrigation-item,
+.energie-item{
     flex: 0 0 calc(20% - 16px);
     background: #64b745;
     border-radius: 10px;
@@ -81,7 +112,9 @@ div#target-2 {
     margin-bottom: 30px;
 }
 
-.pompage-item a h4 {
+.pompage-item a h4,
+.irrigation-item a h4,
+.energie-item a h4 {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -90,21 +123,26 @@ div#target-2 {
     padding: 15px;
 }
 
-.pompage-item a img {
+.pompage-item a img,
+.irrigation-item a img,
+.energie-item a img{
     width: 100%;
     border-radius: 10px;
 }
 
-.pompage-item-img {
+.pompage-item-img,
+.irrigation-item-img,
+.energie-item-img{
     background: white;
     padding: 14px;
     border-radius: 10px;
 }
 
 
-.pompage-section {
-    display: flex
-;
+.pompage-section,
+.irrigation-section,
+.energie-section{
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 100px;
